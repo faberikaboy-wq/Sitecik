@@ -70,12 +70,6 @@
             margin-bottom: 8px;
         }
 
-        p.subtitle {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
-
         /* Mesafe Haritası */
         .distance-card {
             background: rgba(255, 255, 255, 0.03);
@@ -94,14 +88,9 @@
         }
 
         .city-name {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #fff;
-        }
-
-        .city-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
         }
 
         .line-container {
@@ -229,14 +218,12 @@
         <div class="header">
             <span class="badge">Aramızdaki Mesafeler Yalan</span>
             <h1>Kalbim Senle Kalıyor</h1>
-            <p class="subtitle">11 yaşımızdan beri, henüz yan yana gelemesek de her an aklımdasın.</p>
         </div>
 
         <!-- Mesafe Kartı -->
         <div class="distance-card">
             <div class="city">
                 <div class="city-name">Bursa</div>
-                <div class="city-label">Senin Yanın</div>
             </div>
             
             <div class="line-container">
@@ -246,7 +233,6 @@
 
             <div class="city">
                 <div class="city-name">Ordu</div>
-                <div class="city-label">Onun Yanı</div>
             </div>
         </div>
 
