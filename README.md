@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sana Özel Bir Hikaye...</title>
+    <title>Sadece Senin İçin... 🤍</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --text-main: #2b2b2b;
-            --accent: #d4a373;
-            --accent-hover: #bc6c25;
-            --rose-gold: #b08968;
+            --bg-color: #f7f3f0;
+            --phone-bg: #ffffff;
+            --text-main: #2d2327;
+            --accent-rose: #d4a59a;
+            --accent-gold: #c29b61;
+            --soft-gray: #f9f6f5;
         }
 
         * {
@@ -24,231 +24,326 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #fcf6f5;
-            background-image: radial-gradient(circle at 10% 20%, rgba(255, 228, 225, 0.5) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(245, 222, 179, 0.4) 0%, transparent 40%);
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#e8d8d3 1px, transparent 1px);
+            background-size: 24px 24px;
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
+            padding: 15px;
         }
 
-        .main-container {
+        /* Telefon Çerçevesi Konsepti (En Çok Beğenilen Modern Trend) */
+        .phone-wrapper {
             width: 100%;
-            max-width: 650px;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 24px;
-            padding: 40px 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-            text-align: center;
+            max-width: 410px;
+            height: 840px;
+            background: var(--phone-bg);
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(180, 140, 130, 0.15), 
+                        0 0 0 10px #eae2df;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             position: relative;
-            z-index: 10;
         }
 
-        /* Sekmeler / Adımlar */
-        .step {
+        /* Telefon Üst Çentiği (Dynamic Island Efekti) */
+        .phone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #111;
+            border-radius: 20px;
+            z-index: 100;
+        }
+
+        /* İçerik Alanı (Kaydırılabilir) */
+        .screen-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 45px 24px 30px 24px;
+            scrollbar-width: none; /* Firefox için scroll gizleme */
+        }
+        .screen-content::-webkit-scrollbar {
+            display: none; /* Chrome/Safari için scroll gizleme */
+        }
+
+        /* Bölümler (Screens) */
+        .section {
             display: none;
-            animation: fadeIn 0.8s ease forwards;
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .step.active {
+        .section.active {
             display: block;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            color: #33272a;
+        /* Tipografi & Bileşenler */
+        .hero-badge {
+            display: inline-block;
+            background: #f4eae6;
+            color: var(--accent-rose);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-bottom: 15px;
         }
 
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            color: #2b2024;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
 
         p {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             line-height: 1.7;
-            color: #5c5552;
+            color: #6b5b60;
             margin-bottom: 25px;
             font-weight: 300;
         }
 
-        /* Buton Stilleri */
-        .btn {
-            background-color: var(--text-main);
+        /* Şık Butonlar */
+        .btn-primary {
+            width: 100%;
+            background: var(--text-main);
             color: white;
             border: none;
-            padding: 14px 32px;
-            font-size: 1rem;
-            border-radius: 50px;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn:hover {
-            background-color: var(--rose-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(176, 137, 104, 0.3);
-        }
-
-        /* Etkileşimli Soru Bölümü (Kaçan Buton Oyunu) */
-        .interactive-box {
-            position: relative;
-            height: 120px;
-            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(45, 35, 39, 0.15);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-rose);
+            transform: translateY(-2px);
+        }
+
+        /* Sayaç Kutuları */
+        .counter-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .c-box {
+            background: var(--soft-gray);
+            padding: 18px 10px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #eee2de;
+        }
+
+        .c-box span {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .c-box label {
+            font-size: 0.75rem;
+            color: #8c7a80;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Fotoğraf / Anı Alanı (Mockup) */
+        .polaroid {
+            background: white;
+            padding: 12px 12px 20px 12px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+            border: 1px solid #f0e6e2;
+            transform: rotate(-1deg);
+        }
+
+        .polaroid-img {
+            width: 100%;
+            height: 220px;
+            background: #f2e9e4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b09e95;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .polaroid-caption {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 12px;
+            color: #4a3b40;
+        }
+
+        /* İnteraktif Soru Alanı */
+        .question-card {
+            background: var(--soft-gray);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .interactive-area {
+            position: relative;
+            height: 100px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
 
         #btn-hayir {
             position: absolute;
-            background-color: #e0e0e0;
-            color: #666;
-            transition: 0.1s ease;
-        }
-
-        /* Zaman Çizelgesi / Sayaç */
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .t-card {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 15px;
+            background: #e2d7d3;
+            color: #7a6a70;
+            border: none;
+            padding: 12px 24px;
             border-radius: 12px;
-            border: 1px solid #eee;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.1s ease-out;
         }
 
-        .t-card span {
-            display: block;
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
-            color: var(--rose-gold);
-            font-weight: bold;
+        #btn-evet {
+            background: var(--accent-rose);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(212, 165, 154, 0.4);
         }
 
-        .t-card label {
-            font-size: 0.85rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Fotoğraf/Anı Kartı Alanı */
-        .memory-frame {
-            width: 100%;
-            height: 250px;
-            background: #f4efe9;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9c8c84;
-            font-style: italic;
-            margin-bottom: 20px;
-            border: 2px dashed #dcd0c0;
-            overflow: hidden;
-        }
-
-        .memory-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* İnce detaylar */
-        .footer-note {
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: #b5a49c;
+        /* Alt Markalama / İnce İzafiye */
+        .footer-signature {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #bfa8a2;
             letter-spacing: 2px;
             text-transform: uppercase;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
+    <div class="phone-wrapper">
+        <div class="phone-notch"></div>
 
-        <!-- ADIM 1: Karşılama ve Merak Uyandırma -->
-        <div class="step active" id="step-1">
-            <h1>Sana Özel Bir Sayfa...</h1>
-            <p>Bu ekran sadece senin için, aramızdaki özel anların ve hislerin dijital bir yansıması olarak tasarlandı. Keşfetmeye hazırsan başlayalım.</p>
-            <button class="btn" onclick="nextStep(2)">Keşfetmeye Başla ✨</button>
-        </div>
+        <div class="screen-content">
 
-        <!-- ADIM 2: Etkileşimli Deneyim / Zaman Sayacı -->
-        <div class="step" id="step-2">
-            <h2>Zamanın En Güzel Hali</h2>
-            <p>Birlikte geçirdiğimiz her saniye, koleksiyonumun en değerli parçası.</p>
-            
-            <div class="timeline-grid">
-                <div class="t-card"><span id="days">0</span><label>Gün</label></div>
-                <div class="t-card"><span id="hours">0</span><label>Saat</label></div>
-                <div class="t-card"><span id="minutes">0</span><label>Dakika</label></div>
-                <div class="t-card"><span id="seconds">0</span><label>Saniye</label></div>
+            <!-- EKRAN 1: Karşılama -->
+            <div class="section active" id="screen-1">
+                <span class="hero-badge">Özel Alan 🤍</span>
+                <h1>Sadece sana ait bir sayfa hazırladım.</h1>
+                <p>Hayatımın en güzel tesadüfü, her anını özel kılan sevgilim... Bu ekran aramızdaki zamana ve küçük anılara açılıyor.</p>
+                
+                <div style="margin-top: 40px;">
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            ✨<br>Buraya en tatlı fotoğrafınız gelebilir
+                        </div>
+                        <div class="polaroid-caption">İyi ki varsın</div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="goToScreen(2)">Devam Et ➔</button>
             </div>
 
-            <button class="btn" onclick="nextStep(3)">Hikayeye Devam Et</button>
-        </div>
+            <!-- EKRAN 2: Sayaç (Zaman Akışı) -->
+            <div class="section" id="screen-2">
+                <span class="hero-badge">Zaman Çizelgesi</span>
+                <h1>Birlikte Attığımız Her Adım</h1>
+                <p>Aramızda geçen her saniye kalbimde bambaşka bir iz bırakıyor.</p>
 
-        <!-- ADIM 3: Duygusal Bağ & Anı Alanı -->
-        <div class="step" id="step-3">
-            <h2>Hatırlasana...</h2>
-            <div class="memory-frame">
-                <!-- Fotoğraf eklemek için: <img src="fotograf.jpg" alt="Anı"> -->
-                <span>(Buraya en güzel anınıza ait bir fotoğraf eklenebilir)</span>
+                <div class="counter-container">
+                    <div class="c-box"><span id="days">0</span><label>Gün</label></div>
+                    <div class="c-box"><span id="hours">0</span><label>Saat</label></div>
+                    <div class="c-box"><span id="minutes">0</span><label>Dakika</label></div>
+                    <div class="c-box"><span id="seconds">0</span><label>Saniye</label></div>
+                </div>
+
+                <button class="btn-primary" onclick="goToScreen(3)">Sıradaki Sürpriz ➔</button>
             </div>
-            <p>Gülüşünün takılı kaldığı o an, zamanın durmasını istediğim yerdi.</p>
-            <button class="btn" onclick="nextStep(4)">Son Soruya Geç</button>
-        </div>
 
-        <!-- ADIM 4: Eğlenceli Kapanış (Kaçan Buton Sürprizi) -->
-        <div class="step" id="step-4">
-            <h2>Küçük Bir Onay Testi :)</h2>
-            <p>Dünyanın en şanslı insanı olduğumu kabul ediyor musun?</p>
-            
-            <div class="interactive-box">
-                <button class="btn" id="btn-evet" onclick="showFinal()">Kesinlikle! 🤍</button>
-                <button class="btn" id="btn-hayir" onmouseover="moveButton()" onclick="moveButton()">Hayır</button>
+            <!-- EKRAN 3: Eğlenceli Onay -->
+            <div class="section" id="screen-3">
+                <span class="hero-badge">Küçük Bir Test :)</span>
+                <div class="question-card">
+                    <h2 style="font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:10px;">Dünyanın en şanslı sevgilisi sen misin?</h2>
+                    <p style="font-size:0.85rem; margin-bottom:0;">Doğru seçeneği seçmek zorundasın!</p>
+                </div>
+
+                <div class="interactive-area">
+                    <button id="btn-evet" onclick="goToScreen(4)">Kesinlikle! 🤍</button>
+                    <button id="btn-hayir" onmouseover="moveButton()" onclick="moveButton()">Hayır</button>
+                </div>
             </div>
-        </div>
 
-        <!-- ADIM 5: Final Sürprizi -->
-        <div class="step" id="step-5">
-            <h1>İyi ki Varsın</h1>
-            <p>Doğru cevap! Sınırsız sevgilerimle, bu sayfa sonsuza kadar açık kalacak...</p>
-            <div class="footer-note">Özel Bir Hikaye</div>
-        </div>
+            <!-- EKRAN 4: Final -->
+            <div class="section" id="screen-4">
+                <span class="hero-badge">Sonsuza Kadar</span>
+                <h1>Doğru Cevap!</h1>
+                <p>Seni her geçen gün, dünden çok ama yarından az sınırsızca seveceğim. İyi ki benimlesin.</p>
+                
+                <div style="text-align: center; font-size: 3rem; margin: 30px 0;">
+                    🤍✨
+                </div>
 
+                <div class="footer-signature">Sonsuza Dek Seninle</div>
+            </div>
+
+        </div>
     </div>
 
     <script>
-        // --- ADIM GEÇİŞLERİ ---
-        function nextStep(stepNumber) {
-            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
-            document.getElementById(`step-${stepNumber}`).classList.add('active');
+        // --- EKRAN GEÇİŞ MANTIĞI ---
+        function goToScreen(screenNumber) {
+            document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+            document.getElementById(`screen-${screenNumber}`).classList.add('active');
+            // Ekran değişince scroll'u en üste al
+            document.querySelector('.screen-content').scrollTop = 0;
         }
 
-        // --- SAYAÇ MANTIĞI ---
-        // Buraya ilişki başlangıç tarihinizi girin (Örn: "2024-01-01T00:00:00")
-        const startDate = new Date("2024-06-15T00:00:00");
+        // --- SAYAÇ MOTORU ---
+        // Buraya ilişkinizin başladığı tarihi YYYY-AA-GG formatında yazın (Örn: 2023-09-14)
+        const startDate = new Date("2024-02-14T00:00:00");
 
         function updateTimer() {
             const now = new Date();
@@ -270,14 +365,10 @@
 
         // --- KAÇAN "HAYIR" BUTONU UX OYUNU ---
         function moveButton() {
-            const btnHayir = document.getElementById('btn-hayir');
-            const x = Math.random() * 200 - 100; // Rastgele X konumu
-            const y = Math.random() * 80 - 40;   // Rastgele Y konumu
-            btnHayir.style.transform = `translate(${x}px, ${y}px)`;
-        }
-
-        function showFinal() {
-            nextStep(5);
+            const btn = document.getElementById('btn-hayir');
+            const randomX = (Math.random() - 0.5) * 140;
+            const randomY = (Math.random() - 0.5) * 60;
+            btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
     </script>
 </body>
