@@ -76,7 +76,7 @@
             font-weight: 300;
         }
 
-        /* Mesafe Haritası Görselleştirmesi */
+        /* Mesafe Haritası */
         .distance-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-color);
@@ -158,7 +158,7 @@
             text-transform: uppercase;
         }
 
-        /* Buluştuğumuzda Yapılacaklar (Bucket List) */
+        /* Buluştuğumuzda Yapılacaklar Listesi */
         .bucket-section {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
@@ -229,13 +229,13 @@
         <div class="header">
             <span class="badge">Aramızdaki Mesafeler Yalan</span>
             <h1>Kalbim Senle Kalıyor</h1>
-            <p class="subtitle">Henüz yan yana gelemedik ama her an aklımdasın.</p>
+            <p class="subtitle">11 yaşımızdan beri, henüz yan yana gelemesek de her an aklımdasın.</p>
         </div>
 
         <!-- Mesafe Kartı -->
         <div class="distance-card">
             <div class="city">
-                <div class="city-name">Ankara</div> <!-- Kendi Şehrini Yaz -->
+                <div class="city-name">Bursa</div>
                 <div class="city-label">Senin Yanın</div>
             </div>
             
@@ -245,7 +245,7 @@
             </div>
 
             <div class="city">
-                <div class="city-name">İstanbul</div> <!-- Onun Şehrini Yaz -->
+                <div class="city-name">Ordu</div>
                 <div class="city-label">Onun Yanı</div>
             </div>
         </div>
@@ -268,7 +268,7 @@
             </div>
             <div class="bucket-item">
                 <div class="checkbox"></div>
-                <span>Gözlerinin içine bakarak kahve içmek</span>
+                <span>Birlikte gün batımını seyretmek 🌅</span>
             </div>
             <div class="bucket-item">
                 <div class="checkbox"></div>
@@ -276,24 +276,24 @@
             </div>
             <div class="bucket-item">
                 <div class="checkbox"></div>
-                <span>Saatlerce yorulmadan yürümek</span>
+                <span>Yılların özlemiyle saatlerce yürümek</span>
             </div>
         </div>
 
         <!-- Not Kartı -->
         <div class="note-card">
-            "Aramızdaki kilometreler sadece haritadaki çizgilerden ibaret. İlk sarılmamıza kadar geçen her gün seni daha çok seveceğim."
+            "Bursa ile Ordu arasındaki kilometreler ve yıllar sevgimizi azaltamadı. İlk defa sarılacağımız o güne kadar seni sevmeye devam edeceğim."
         </div>
 
         <footer>
-            Sonsuza Dek Kalbimdesin 🤍
+            23 Ocak 2020'den Beri Sonsuza Dek... 🤍
         </footer>
 
     </div>
 
     <script>
-        // Tanışma / İlişki başlangıç tarihinizi buraya girin (YYYY-AA-GG)
-        const startDate = new Date("2024-01-01T00:00:00");
+        // Sevgili olduğunuz gün: 23 Ocak 2020
+        const startDate = new Date("2020-01-23T00:00:00");
 
         function updateCounter() {
             const now = new Date();
